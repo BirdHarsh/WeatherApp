@@ -1,18 +1,18 @@
-// mockHourlyData.ts
+
 import { HourForecast } from "../models/weather";
 
 export const mockHourlyData: HourForecast[] = Array.from({ length: 12 }).map((_, i) => {
   const now = new Date();
-  const futureHour = new Date(now.getTime() + i * 60 * 60 * 1000); // Add i hours
+  const futureHour = new Date(now.getTime() + i * 60 * 60 * 1000); 
   const hour = futureHour.getHours();
 
   return {
     time: futureHour.toISOString(),
     time_epoch: Math.floor(futureHour.getTime() / 1000),
-    temp_c: 16 + Math.round(Math.random() * 10), // Between 16°C and 26°C
+    temp_c: 16 + Math.round(Math.random() * 10), 
     condition: {
       text: getMockCondition(hour),
-      icon: '', // Not used in UI, so keep empty or fill if needed
+      icon: '', 
     },
   };
 });

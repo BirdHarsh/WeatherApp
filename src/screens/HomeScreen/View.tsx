@@ -1,4 +1,3 @@
-// components/HomeScreen/View.tsx
 import React from 'react';
 import { ActivityIndicator, ScrollView, Text, View } from 'react-native';
 import WeatherCardContainer from '../../components/WeatherCard';

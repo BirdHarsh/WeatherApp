@@ -1,4 +1,4 @@
-// components/ForecastItem/Container.tsx
+
 import React from 'react';
 import ForecastItemView from './View';
 import { ForecastDay } from '../../models/weather';

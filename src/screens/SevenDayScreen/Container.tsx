@@ -1,4 +1,4 @@
-// components/SevenDaysScreen/Container.tsx
+
 import React from 'react';
 import SevenDaysView from './View';
 import { useNavigation } from '@react-navigation/native';

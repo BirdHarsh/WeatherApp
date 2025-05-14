@@ -1,4 +1,4 @@
-// View.tsx
+
 import React, { use } from 'react';
 import { View, Text, StyleSheet, Dimensions, ActivityIndicator, ScrollView } from 'react-native';
 import { getWeatherIcon } from '../../models/weatherIcons';
@@ -37,13 +37,13 @@ if (!weatherData || !weatherData.main || !weatherData.weather || !weatherData.wi
   }
  
   const current = {
-    temp_c: weatherData.main.temp - 273.15 ,  // Convert Kelvin to Celsius
-    feelslike_c: weatherData.main.feels_like - 273.15,  // Convert Kelvin to Celsius
-    wind_kph: weatherData.wind.speed * 3.6,  // Convert m/s to km/h
+    temp_c: weatherData.main.temp - 273.15 , 
+    feelslike_c: weatherData.main.feels_like - 273.15,  
+    wind_kph: weatherData.wind.speed * 3.6,  
     humidity: weatherData.main.humidity,
     pressure_mb: weatherData.main.pressure,
     condition: {
-      text: weatherData.weather[0].description,  // Get weather condition text
+      text: weatherData.weather[0].description,  
     },
   };
 const countryName = countries.getName(weatherData.sys.country, 'en');
@@ -51,7 +51,7 @@ const countryName = countries.getName(weatherData.sys.country, 'en');
     name: weatherData.name,
   };
 
-  const WeatherIcon = getWeatherIcon(current.condition.text);  // No need to invoke it
+  const WeatherIcon = getWeatherIcon(current.condition.text); 
 
   const date = new Date();
   const formattedDate = `${date.toLocaleDateString('en-US', { weekday: 'long' })}, ${date.getDate()} ${date.toLocaleDateString('en-US', { month: 'short' })}`;

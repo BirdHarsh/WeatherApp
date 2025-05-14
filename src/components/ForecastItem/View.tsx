@@ -1,4 +1,4 @@
-// components/ForecastItem/View.tsx
+
 import React from 'react';
 import { View, Text } from 'react-native';
 import { ForecastDay } from '../../models/weather';

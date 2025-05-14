@@ -21,7 +21,6 @@ export async function getWeatherForecast(city: string) {
 
     const now = new Date();
 
-    // ✅ Filter and map next 24 hours
     const next24Hours = data.list
       .filter((entry: any) => {
         const entryTime = new Date(entry.dt_txt);
@@ -38,7 +37,6 @@ export async function getWeatherForecast(city: string) {
         },
       }));
 
-    // ✅ Group and format 7-day forecast
     const grouped: Record<string, any[]> = {};
     data.list.forEach((entry: any) => {
       const date = entry.dt_txt.split(' ')[0];
@@ -64,11 +62,10 @@ export async function getWeatherForecast(city: string) {
               icon: mapIconToSimple(icons[0]),
             },
           },
-          hour: [], // You can fill this if needed
+          hour: [], 
         };
       });
 
-    // ✅ Return both structures
     return {
       location: {
         name: data.city.name || 'Unknown',

@@ -1,4 +1,4 @@
-// components/SevenDaysScreen/View.tsx
+
 import React from 'react';
 import { View, Text, FlatList, TouchableOpacity, StatusBar, Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';

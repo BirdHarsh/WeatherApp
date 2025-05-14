@@ -1,4 +1,4 @@
-// Container.tsx
+
 import React from 'react';
 import WeatherCardView from './View';
 import { OpenWeatherAPIResponse } from '../../models/openWeatherApi';

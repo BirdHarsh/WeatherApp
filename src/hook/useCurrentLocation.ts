@@ -1,4 +1,4 @@
-// hooks/useCurrentLocation.ts
+
 import { useEffect, useState } from 'react';
 import { Platform, PermissionsAndroid } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
@@ -20,7 +20,7 @@ export const useCurrentLocation = () => {
       );
       return granted === PermissionsAndroid.RESULTS.GRANTED;
     }
-    // iOS permission is handled automatically in Geolocation call if set up in Info.plist
+
     return true;
   };
 

@@ -11,7 +11,7 @@ export interface OpenWeatherAPIResponse {
   }>;
   base: string;
   main: {
-    temp: number; // Kelvin
+    temp: number; 
     feels_like: number;
     temp_min: number;
     temp_max: number;
@@ -29,13 +29,13 @@ export interface OpenWeatherAPIResponse {
   clouds: {
     all: number;
   };
-  dt: number; // timestamp
+  dt: number; 
   sys: {
     country: string;
-    sunrise: number; // timestamp
-    sunset: number;  // timestamp
+    sunrise: number; 
+    sunset: number; 
   };
-  timezone: number; // offset in seconds
+  timezone: number; 
   id: number;
   name: string;
   cod: number;

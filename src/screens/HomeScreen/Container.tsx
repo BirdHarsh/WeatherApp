@@ -1,4 +1,4 @@
-// components/HomeScreen/Container.tsx
+
 import React from 'react';
 import HomeScreenView from './View';
 import { useWeather } from '../../context/weatherContext';

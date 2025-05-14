@@ -19,6 +19,6 @@ export const getWeatherIcon = (condition: string) => {
     }
   }
 
-  // Default fallback icon
+
   return <Icon name="weather-partly-cloudy" size={60} color="white" />;
 };

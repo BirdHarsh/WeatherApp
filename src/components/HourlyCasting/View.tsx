@@ -1,4 +1,4 @@
-// View.tsx
+
 import React from 'react';
 import { View, Text,  ScrollView, TouchableOpacity, ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
