@@ -2,9 +2,9 @@
 import React from 'react';
 import { View, Text, FlatList, TouchableOpacity, StatusBar, Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
-import ForecastItem from '../ForecastItem';
+import ForecastItemContainer from '../../components/ForecastItem';
 import { styles } from './styles';
-import { ForecastDay } from '../../types/weather';
+import { ForecastDay } from '../../models/weather';
 
 interface Props {
   navigation: any;
@@ -32,7 +32,7 @@ const SevenDaysView: React.FC<Props> = ({ navigation, location, forecast }) => (
       <FlatList
         data={forecast.forecastday}
         keyExtractor={(item) => item.date}
-        renderItem={({ item }) => <ForecastItem forecast={item} />}
+        renderItem={({ item }) => <ForecastItemContainer forecast={item} />}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.forecastList}
       />

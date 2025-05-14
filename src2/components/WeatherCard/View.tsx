@@ -1,11 +1,12 @@
 // View.tsx
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { getWeatherIcon } from '../utils/weatherIcons';
+import { getWeatherIcon } from '../../models/weatherIcons';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import { styles } from './styles';
+import { OpenWeatherAPIResponse } from '../../models/openWeatherApi';
 
 interface WeatherCardProps {
   weatherData: OpenWeatherAPIResponse;

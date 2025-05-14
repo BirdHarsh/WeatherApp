@@ -2,7 +2,7 @@
 import React from 'react';
 import HomeScreenView from './View';
 import { useWeather } from '../../context/weatherContext';
-import { mockHourlyData } from '../../test/fakedata';
+import { mockHourlyData } from '../../utils/fakedata';
 
 const rawWeatherData = {
   coord: { lon: 78.7514, lat: 23.8191 },

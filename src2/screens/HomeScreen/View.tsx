@@ -1,11 +1,11 @@
 // components/HomeScreen/View.tsx
 import React from 'react';
-import { View } from 'react-native';
-import WeatherCard from '../WeatherCard';
-import HourlyForecast from '../HourlyCasting';
+import { Text, View } from 'react-native';
+import WeatherCardContainer from '../../components/WeatherCard';
+import HourlyForecastContainer from '../../components/HourlyCasting';
 import { styles } from './styles';
-import { HourForecast } from '../../types/weather';
-import { OpenWeatherAPIResponse } from '../../types/openWeatherApi';
+import { HourForecast } from '../../models/weather';
+import { OpenWeatherAPIResponse } from '../../models/openWeatherApi';
 
 interface HomeScreenViewProps {
   weatherData: OpenWeatherAPIResponse;
@@ -15,8 +15,9 @@ interface HomeScreenViewProps {
 const HomeScreenView: React.FC<HomeScreenViewProps> = ({ weatherData, hourlyData }) => {
   return (
     <View style={styles.container}>
-      <WeatherCard weatherData={weatherData} />
-      <HourlyForecast hourlyData={hourlyData} />
+      
+      <WeatherCardContainer weatherData={weatherData} />
+      <HourlyForecastContainer hourlyData={hourlyData} />
     </View>
   );
 };

@@ -1,7 +1,7 @@
 // Container.tsx
 import React from 'react';
 import WeatherCardView from './View';
-import { OpenWeatherAPIResponse } from '../types/openWeatherApi';
+import { OpenWeatherAPIResponse } from '../../models/openWeatherApi';
 
 interface WeatherCardContainerProps {
   weatherData: OpenWeatherAPIResponse;

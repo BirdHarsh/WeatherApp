@@ -8,9 +8,10 @@ import {
  
 
 } from 'react-native';
-import HomeScreen from './src/screens/HomeScreen';
+import HomeScreenContainer from './src2/screens/HomeScreen';
 import SevenDaysScreen from './src/screens/SevenDaysScreen';
-import { WeatherProvider } from './src/context/weatherContext';
+import { WeatherProvider } from './src2/context/weatherContext';
+import SevenDaysContainer from './src2/screens/SevenDayScreen';
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -21,8 +22,8 @@ function App() {
     <WeatherProvider>
   <NavigationContainer>
 <Stack.Navigator>
-<Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-<Stack.Screen name="Details" component={SevenDaysScreen} options={{ headerShown: false }} />
+<Stack.Screen name="Home" component={HomeScreenContainer} options={{ headerShown: false }} />
+<Stack.Screen name="Details" component={SevenDaysContainer} options={{ headerShown: false }} />
 </Stack.Navigator>
   </NavigationContainer>
     </WeatherProvider>

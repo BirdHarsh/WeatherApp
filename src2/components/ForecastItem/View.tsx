@@ -1,8 +1,8 @@
 // components/ForecastItem/View.tsx
 import React from 'react';
 import { View, Text } from 'react-native';
-import { ForecastDay } from '../types/weather';
-import { getWeatherIcon } from '../utils/weatherIcons';
+import { ForecastDay } from '../../models/weather';
+import { getWeatherIcon } from '../../models/weatherIcons';
 import { styles } from './styles';
 
 interface ForecastItemProps {

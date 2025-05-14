@@ -1,7 +1,7 @@
 // components/ForecastItem/Container.tsx
 import React from 'react';
 import ForecastItemView from './View';
-import { ForecastDay } from '../types/weather';
+import { ForecastDay } from '../../models/weather';
 
 interface ForecastItemContainerProps {
   forecast: ForecastDay;

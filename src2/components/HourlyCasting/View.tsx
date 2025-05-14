@@ -3,8 +3,8 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
-import { HourForecast } from '../types/weather';
-import { getWeatherIcon } from '../utils/weatherIcons';
+import { HourForecast } from '../../models/weather';
+import { getWeatherIcon } from '../../models/weatherIcons';
 import { styles } from './styles';
 
 interface HourlyForecastProps {

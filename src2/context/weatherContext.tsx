@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { fetchWeatherData } from '../apis/fetchWeatherInfo';
-import { getWeatherForecast } from '../apis/fetchForecast';
+import { fetchWeatherData } from '../services/fetchWeatherInfo';
+import { getWeatherForecast } from '../services/fetchForecast';
 import { useCurrentLocation } from '../hook/useCurrentLocation';
 
 interface WeatherContextType {
