@@ -1,6 +1,6 @@
 // components/HomeScreen/View.tsx
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import WeatherCardContainer from '../../components/WeatherCard';
 import HourlyForecastContainer from '../../components/HourlyCasting';
 import { styles } from './styles';
@@ -15,7 +15,6 @@ interface HomeScreenViewProps {
 const HomeScreenView: React.FC<HomeScreenViewProps> = ({ weatherData, hourlyData }) => {
   return (
     <View style={styles.container}>
-      
       <WeatherCardContainer weatherData={weatherData} />
       <HourlyForecastContainer hourlyData={hourlyData} />
     </View>

@@ -1,6 +1,6 @@
 // View.tsx
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text,  ScrollView, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 import { HourForecast } from '../../models/weather';
@@ -30,7 +30,7 @@ const HourlyForecastView: React.FC<HourlyForecastProps> = ({ hourlyData }) => {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.scrollContent}
       >
-        {hourlyData.map((hour, index) => {
+        {hourlyData?.map((hour, index) => {
           const WeatherIcon = getWeatherIcon(hour.condition.text);
           const hourTime = new Date(hour.time).getHours();
           const formattedHour = hourTime === 12

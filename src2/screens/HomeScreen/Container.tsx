@@ -24,11 +24,12 @@ const HomeScreenContainer = () => {
   const { forecastData, weatherData } = useWeather();
 
   const data = {
-    weatherData: weatherData ?? rawWeatherData,
-    hourlyData: forecastData ?? mockHourlyData,
+    weatherData: weatherData,
+    hourlyData: forecastData ,
   };
 
-  return <HomeScreenView {...data} />;
+  return (
+  <HomeScreenView {...data} />);
 };
 
 export default HomeScreenContainer;

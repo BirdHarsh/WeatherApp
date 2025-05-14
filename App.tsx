@@ -9,15 +9,14 @@ import {
 
 } from 'react-native';
 import HomeScreenContainer from './src2/screens/HomeScreen';
-import SevenDaysScreen from './src/screens/SevenDaysScreen';
+
 import { WeatherProvider } from './src2/context/weatherContext';
 import SevenDaysContainer from './src2/screens/SevenDayScreen';
 const Stack = createNativeStackNavigator();
 
 function App() {
 
-  
-  
+
   return (
     <WeatherProvider>
   <NavigationContainer>

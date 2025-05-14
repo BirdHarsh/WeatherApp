@@ -14,6 +14,7 @@ interface WeatherContextType {
 
 const WeatherContext = createContext<WeatherContextType | undefined>(undefined);
 
+
 export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { location, error, loading, refresh } = useCurrentLocation();
   const [weatherData, setWeatherData] = useState<any>(null);

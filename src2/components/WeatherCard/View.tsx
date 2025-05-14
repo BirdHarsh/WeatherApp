@@ -1,5 +1,5 @@
 // View.tsx
-import React from 'react';
+import React, { use } from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { getWeatherIcon } from '../../models/weatherIcons';
 import Icon from 'react-native-vector-icons/FontAwesome6';
@@ -8,13 +8,23 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import { styles } from './styles';
 import { OpenWeatherAPIResponse } from '../../models/openWeatherApi';
 
+
 interface WeatherCardProps {
   weatherData: OpenWeatherAPIResponse;
 }
 
+
 const WeatherCardView: React.FC<WeatherCardProps> = ({ weatherData }) => {
+if (!weatherData || !weatherData.main || !weatherData.weather || !weatherData.wind || !weatherData.sys) {
+    return (
+      <View style={{ padding: 20, alignItems: 'center' }}>
+        <Text>Weather data is not available.</Text>
+      </View>
+    );
+  }
+ 
   const current = {
-    temp_c: weatherData.main.temp - 273.15,  // Convert Kelvin to Celsius
+    temp_c: weatherData.main.temp - 273.15 ,  // Convert Kelvin to Celsius
     feelslike_c: weatherData.main.feels_like - 273.15,  // Convert Kelvin to Celsius
     wind_kph: weatherData.wind.speed * 3.6,  // Convert m/s to km/h
     humidity: weatherData.main.humidity,
@@ -57,6 +67,7 @@ const WeatherCardView: React.FC<WeatherCardProps> = ({ weatherData }) => {
   ];
 
   return (
+ 
     <View>
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
         <Entypo name="menu" size={30} color="#000000" />

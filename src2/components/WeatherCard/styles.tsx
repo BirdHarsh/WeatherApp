@@ -4,6 +4,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 const { width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
+  
   card: {
     width: width - 48,
     backgroundColor: '#4285F4',
