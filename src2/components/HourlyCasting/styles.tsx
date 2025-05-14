@@ -6,7 +6,8 @@ const { width } = Dimensions.get('window');
 export const styles = StyleSheet.create({
   container: {
     marginTop: 24,
-    width: width - 48,
+    width: "100%",
+  
   },
   title: {
     fontSize: 18,

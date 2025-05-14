@@ -1,11 +1,12 @@
 // View.tsx
 import React from 'react';
-import { View, Text,  ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text,  ScrollView, TouchableOpacity, ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 import { HourForecast } from '../../models/weather';
 import { getWeatherIcon } from '../../models/weatherIcons';
 import { styles } from './styles';
+import { useWeather } from '../../context/weatherContext';
 
 interface HourlyForecastProps {
   hourlyData: HourForecast[];
@@ -13,10 +14,19 @@ interface HourlyForecastProps {
 
 const HourlyForecastView: React.FC<HourlyForecastProps> = ({ hourlyData }) => {
   const navigation = useNavigation();
+  const {loading}= useWeather();
+    if (loading) {
+      return (
+        <View style={{ padding: 20, alignItems: 'center' }}>
+          <ActivityIndicator size="large" color="#0000ff" />
+          <Text>Loading...</Text>
+        </View>
+      );
+    }
 
   return (
     <View style={styles.container}>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', }}>
         <Text style={styles.title}>Today</Text>
         <TouchableOpacity onPress={() => navigation.navigate('Details')}>
           <Text style={{ color: '#848484', fontSize: 16 }}>
@@ -32,6 +42,7 @@ const HourlyForecastView: React.FC<HourlyForecastProps> = ({ hourlyData }) => {
       >
         {hourlyData?.map((hour, index) => {
           const WeatherIcon = getWeatherIcon(hour.condition.text);
+          console.log(hour.condition.text);
           const hourTime = new Date(hour.time).getHours();
           const formattedHour = hourTime === 12
             ? '12:00'

@@ -94,14 +94,14 @@ function mostCommon(arr: string[]): string {
 
 function mapIconToSimple(code: string): string {
   const map: Record<string, string> = {
-    '01d': 'sunny',
-    '01n': 'clear-night',
-    '02d': 'partly-cloudy',
+    '01d': 'snow',
+    '01n': 'thunderstrom',
+    '02d': 'rain',
     '02n': 'partly-cloudy-night',
-    '03d': 'cloudy',
-    '03n': 'cloudy',
-    '04d': 'cloudy',
-    '04n': 'cloudy',
+    '03d': 'cloud',
+    '03n': 'cloud',
+    '04d': 'snow',
+    '04n': 'mist',
     '09d': 'rain',
     '09n': 'rain',
     '10d': 'rain',
@@ -110,8 +110,8 @@ function mapIconToSimple(code: string): string {
     '11n': 'thunder',
     '13d': 'snow',
     '13n': 'snow',
-    '50d': 'fog',
-    '50n': 'fog',
+    '50d': 'mist',
+    '50n': 'mist',
   };
   return map[code] || 'unknown';
 }

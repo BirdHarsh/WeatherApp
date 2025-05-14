@@ -1,24 +1,37 @@
 // View.tsx
 import React, { use } from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, ActivityIndicator, ScrollView } from 'react-native';
 import { getWeatherIcon } from '../../models/weatherIcons';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import { styles } from './styles';
 import { OpenWeatherAPIResponse } from '../../models/openWeatherApi';
+import countries from 'i18n-iso-countries';
+import enLocale from 'i18n-iso-countries/langs/en.json';
+import { useWeather } from '../../context/weatherContext';
 
 
 interface WeatherCardProps {
   weatherData: OpenWeatherAPIResponse;
 }
 
-
+countries.registerLocale(enLocale);
 const WeatherCardView: React.FC<WeatherCardProps> = ({ weatherData }) => {
+  const {loading}= useWeather();
+  if (loading) {
+    return (
+      <View style={{ padding: 20, alignItems: 'center' }}>
+        <ActivityIndicator size="large" color="#0000ff" />
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
+
 if (!weatherData || !weatherData.main || !weatherData.weather || !weatherData.wind || !weatherData.sys) {
     return (
       <View style={{ padding: 20, alignItems: 'center' }}>
-        <Text>Weather data is not available.</Text>
+        <Text>HOLD A SEC</Text>
       </View>
     );
   }
@@ -33,7 +46,7 @@ if (!weatherData || !weatherData.main || !weatherData.weather || !weatherData.wi
       text: weatherData.weather[0].description,  // Get weather condition text
     },
   };
-
+const countryName = countries.getName(weatherData.sys.country, 'en');
   const location = {
     name: weatherData.name,
   };
@@ -68,7 +81,7 @@ if (!weatherData || !weatherData.main || !weatherData.weather || !weatherData.wi
 
   return (
  
-    <View>
+    <View >
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
         <Entypo name="menu" size={30} color="#000000" />
         <SimpleLineIcons name="options" size={24} color="#000000" />
@@ -76,7 +89,7 @@ if (!weatherData || !weatherData.main || !weatherData.weather || !weatherData.wi
 
       <View style={{ marginBottom: 16, flexDirection: 'row', alignItems: 'baseline', paddingVertical: 30 }}>
         <Text style={styles.cityLocation}>{location.name}, </Text>
-        <Text style={styles.countryLocation}>Country</Text>
+        <Text style={styles.countryLocation}>{countryName}</Text>
       </View>
 
       <View style={styles.card}>
@@ -95,7 +108,7 @@ if (!weatherData || !weatherData.main || !weatherData.weather || !weatherData.wi
           {metrics.map((item, index) => (
             <View key={index} style={styles.metricItem}>
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end', marginHorizontal: 8 }}>
+                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end', marginHorizontal: 8 ,}}>
                   <Icon name={item.icon} color="white" size={24} />
                 </View>
 

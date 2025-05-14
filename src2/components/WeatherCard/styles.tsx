@@ -6,7 +6,7 @@ const { width } = Dimensions.get('window');
 export const styles = StyleSheet.create({
   
   card: {
-    width: width - 48,
+    
     backgroundColor: '#4285F4',
     borderRadius: 16,
     alignItems: 'center',
@@ -16,6 +16,8 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     overflow: 'hidden',
+    width: width - 48,
+
   },
   internalCard: {
     justifyContent: 'center',
@@ -30,6 +32,7 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '600',
     marginBottom: 4,
+    fontFamily: 'Poppins-Bold',
   },
   dateText: {
     color: 'rgba(255, 255, 255, 0.8)',
@@ -41,6 +44,7 @@ export const styles = StyleSheet.create({
     fontSize: 80,
     fontWeight: '700',
     marginBottom: 24,
+    fontFamily: 'Poppins-Bold',
   },
   metricsContainer: {
     flexDirection: 'row',
@@ -54,6 +58,7 @@ export const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderEndWidth: 1,
     borderColor: '#92c1ff',
+    
   },
   metricLabel: {
     color: 'rgba(255, 255, 255, 0.7)',
@@ -65,6 +70,7 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
     marginTop: 2,
+    fontFamily: 'Poppins-regular',
   },
   cityLocation: {
     color: '#000000',
