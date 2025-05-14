@@ -8,10 +8,10 @@ import {
  
 
 } from 'react-native';
-import HomeScreenContainer from './src2/screens/HomeScreen';
+import HomeScreenContainer from './src/screens/HomeScreen';
 
-import { WeatherProvider } from './src2/context/weatherContext';
-import SevenDaysContainer from './src2/screens/SevenDayScreen';
+import { WeatherProvider } from './src/context/weatherContext';
+import SevenDaysContainer from './src/screens/SevenDayScreen';
 const Stack = createNativeStackNavigator();
 
 function App() {
